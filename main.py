@@ -1,22 +1,20 @@
 import os
-from make_filesystem import make_random_filesystem
-from delete_filesystem import delete_random_filesystem
-from menu import print_menu
+from file_manager import FileManager
+
 
 
 def main():
     while True:
-        print_menu()
+        FileManager.print_menu()
         choice = input("Введите номер команды: ").strip()
-
         if choice == "1":
             base_dir = os.path.join(os.getcwd(), "Random_folders")  # Текущая рабочая директория
             os.makedirs(base_dir, exist_ok=True)
             print(f"Генерация рандомной структуры в каталоге: {base_dir}")
-            make_random_filesystem(base_dir)
+            FileManager.make_random_filesystem(base_dir)
         elif choice == "2":
             base_dir = os.path.join(os.getcwd(), "Random_folders")
-            delete_random_filesystem(base_dir)
+            FileManager.delete_random_filesystem(base_dir)
         elif choice == "0":
             print("Выход из программы.")
             break
