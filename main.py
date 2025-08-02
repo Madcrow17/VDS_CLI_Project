@@ -171,7 +171,6 @@ def main():
             less=args.less
         )
 
-
     if args.command == 'interface':
         cli_interface()
 
