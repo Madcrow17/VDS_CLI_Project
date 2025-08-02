@@ -25,7 +25,7 @@ python3 main.py <команда> [опции]
 
   Создаёт случайное дерево папок и файлов в указанной директории.
 
-  python3 main.py create-tree [path] [--max_depth N] [--max_folders N] [--max_files N]
+  python3 main.py create-tree [path] [--max-depth N] [--max-folders N] [--max-files N]
 
   - `path` — путь к директории, где создать структуру (по умолчанию `Random_folders/`).
   - `--max_depth` — максимальная глубина вложенности папок (по умолчанию 3).
@@ -34,7 +34,7 @@ python3 main.py <команда> [опции]
 
   **Пример:**
 
-  python main.py create-tree Random_folders/ --max_depth 4 --max_folders 5 --max_files 6
+  python main.py create-tree Random_folders/ --max-depth 4 --max-folders 5 --max-files 6
 
 
 ------------------------
