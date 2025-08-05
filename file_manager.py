@@ -151,12 +151,16 @@ class FileManager:
 
         :return: Меотод не возвращает значения (None).
         """
+        if not os.path.exists(path):
+            os.makedirs(path, exist_ok=True)
 
         if current_depth >= max_depth:
+            if not os.path.exists(path):
+                os.makedirs(path, exist_ok=True)
             return
 
-        folders_count = random.randint(1, max_folders)
-        files_count = random.randint(1, max_files)
+        folders_count = random.randint(1, max_folders) if max_folders > 0 else 0
+        files_count = random.randint(1, max_files) if max_files > 0 else 0
 
         for folders in range(folders_count):
             folder_name = FileManager.random_name(FileManager.folder_names, count=1)
@@ -170,6 +174,7 @@ class FileManager:
             file_name = FileManager.random_name(FileManager.file_names, count=1) + "." + FileManager.random_name(
                 FileManager.file_extensions, count=1)
             file_path = os.path.join(path, file_name)
+
             FileManager.create_rand_file(file_path)
             print(f"Создан файл: {file_path}")
 
